@@ -71,17 +71,12 @@
 
         // 페이지 로드 전 사용자 인증
         window.onload = () => {
-            let isAuthenticated = false;
-            while (!isAuthenticated) {
-                const inputId = prompt("아이디를 입력하세요:");
-                const inputPassword = prompt("비밀번호를 입력하세요:");
-                if (inputId === validId && inputPassword === validPassword) {
-                    isAuthenticated = true;
-                    alert("인증 성공! 페이지에 접속합니다.");
-                    document.body.style.display = "flex"; // 페이지 표시
-                } else {
-                    alert("아이디 또는 비밀번호가 잘못되었습니다. 다시 시도하세요.");
-                }
+            const inputId = prompt("아이디를 입력하세요:");
+            const inputPassword = prompt("비밀번호를 입력하세요:");
+            if (inputId === validId && inputPassword === validPassword) {
+                document.body.style.display = "flex"; // 페이지 표시
+            } else {
+                window.location.href = "about:blank"; // 인증 실패 시 이동
             }
         };
 

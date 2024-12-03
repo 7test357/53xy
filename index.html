@@ -69,7 +69,6 @@
         const validId = "goest";
         const validPassword = "966";
 
-        // 페이지 로드 전 사용자 인증
         window.onload = () => {
             const inputId = prompt("아이디를 입력하세요:");
             const inputPassword = prompt("비밀번호를 입력하세요:");
@@ -80,7 +79,6 @@
             }
         };
 
-        // 다크 모드와 화이트 모드 전환 기능
         const button = document.getElementById('modeToggle');
         button.addEventListener('click', () => {
             document.body.classList.toggle('light-mode');

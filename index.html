@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>다크 모드와 화이트 모드 전환</title>
+    <title>게시판</title>
     <style>
         body {
             margin: 0;
@@ -98,7 +98,6 @@
             const isLightMode = document.body.classList.contains('light-mode');
             button.textContent = isLightMode ? '다크 모드' : '화이트 모드';
 
-            // 버튼 스타일 업데이트
             if (isLightMode) {
                 linkButton.classList.remove('dark-mode');
                 linkButton.classList.add('light-mode');

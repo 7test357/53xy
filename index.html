@@ -15,7 +15,7 @@
             background: url('https://source.unsplash.com/random/1920x1080') no-repeat center center fixed;
             background-size: cover;
             transition: background-color 0.5s, color 0.5s;
-            display: none; /* 초기 상태 숨김 */
+            display: none;
         }
         .content {
             text-align: center;
@@ -25,7 +25,7 @@
             transition: background-color 0.5s;
             color: white;
         }
-        button {
+        button, a {
             position: absolute;
             top: 20px;
             right: 20px;
@@ -34,6 +34,9 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
             transition: background-color 0.3s, color 0.3s;
         }
         .dark-mode {
@@ -48,18 +51,25 @@
             background-color: rgba(255, 255, 255, 0.8);
             color: black;
         }
-        .light-mode button {
+        .light-mode button, .light-mode a {
             background-color: black;
             color: white;
         }
-        .dark-mode button {
+        .dark-mode button, .dark-mode a {
             background-color: white;
             color: black;
+        }
+        .link-btn {
+            top: auto;
+            bottom: 20px;
+            right: auto;
+            left: 20px;
         }
     </style>
 </head>
 <body class="dark-mode">
     <button id="modeToggle">화이트 모드</button>
+    <a href="./index/index.html" class="link-btn">인덱스 페이지로 이동</a>
     <div class="content">
         <h1>환영합니다!</h1>
         <p>멋진 배경을 가진 웹 페이지입니다.</p>
@@ -73,9 +83,9 @@
             const inputId = prompt("아이디를 입력하세요:");
             const inputPassword = prompt("비밀번호를 입력하세요:");
             if (inputId === validId && inputPassword === validPassword) {
-                document.body.style.display = "flex"; // 페이지 표시
+                document.body.style.display = "flex";
             } else {
-                window.location.href = "about:blank"; // 인증 실패 시 이동
+                window.location.href = "about:blank";
             }
         };
 

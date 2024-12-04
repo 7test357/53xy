@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사진 갤러리</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            margin: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gallery img {
+            margin: 10px;
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            cursor: pointer;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal img {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 8px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>사진 갤러리</h1>
+    <div class="gallery">
+      <img src="image/wow.jpg" alt="사진 1" onclick="openModal(this.src)">
+      <img src="image/wow0.jpg" alt="사진 1" onclick="openModal(this.src)">
+      <img src="image/wow1.jpg" alt="사진 1" onclick="openModal(this.src)">
+      <img src="image/wow2.jpg" alt="사진 1" onclick="openModal(this.src)">
+      <img src="image/wow3.jpg" alt="사진 1" onclick="openModal(this.src)">
+      <img src="image/wow4.jpg" alt="사진 1" onclick="openModal(this.src)">
+      <img src="image/wow5.jpg" alt="사진 1" onclick="openModal(this.src)">
+      <img src="image/wow6.jpg" alt="사진 1" onclick="openModal(this.src)">
+      <img src="image/wow7.jpg" alt="사진 1" onclick="openModal(this.src)">
+      <img src="image/wow8.jpg" alt="사진 1" onclick="openModal(this.src)">
+      <img src="image/wow9.jpg" alt="사진 1" onclick="openModal(this.src)">
+      
+    </div>
+
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="">
+    </div>
+
+    <script>
+        function openModal(src) {
+            document.getElementById("modalImage").src = src;
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
